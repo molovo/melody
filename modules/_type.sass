@@ -81,8 +81,8 @@ small
 hr
   height: 0
   margin: 2.95em auto 3em
-  border: 0
-    bottom: 1px solid $shade
+  border: solid $shade
+    width: 0 0 1px
 
 blockquote
   display: block
@@ -91,13 +91,12 @@ blockquote
     style: italic
   &:not(.pull)
     margin: 0 0 1.5em -1.5em
-    border: 0
-      left: .25em solid $shade
-    padding: 0
-      left: 1.25em
+    border: solid $shade
+      width: 0 0 0 .25em
+    padding: 0 0 0 1.25em
+    font-weight: 300
   &.pull
-    font:
-      size: 1.5em
+    font-size: 1.5em
     margin: 0 0 1em
     line-height: 1em
 
