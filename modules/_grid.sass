@@ -11,16 +11,16 @@
 	margin: 0 auto
 	padding: 3em
 
-.grid
-	display: inline-block
-	padding: 1.5em
+// .grid
+// 	display: inline-block
+// 	padding: 1.5em
 
-@for $i from 1 through $columns
-	.\3#{$i} of#{$columns}
-		width: ( $i / $columns ) * 100%
+// @for $i from 1 through $columns
+// 	.\3#{$i} of#{$columns}
+// 		width: ( $i / $columns ) * 100%
 
 =split-left
-	letter-spacing: -.35em
+	letter-spacing: $spacing_adjustment
 
 	& > :nth-child(2n+1)
 		display: inline-block
@@ -39,7 +39,7 @@
 		padding: 0
 
 =split-right
-	letter-spacing: -.35em
+	letter-spacing: $spacing_adjustment
 
 	& > :nth-child(2n+1)
 		display: inline-block
@@ -58,7 +58,7 @@
 		padding: 0
 
 =grid($large_columns, $mid_columns, $small_columns)
-	letter-spacing: -.35em
+	letter-spacing: $spacing_adjustment
 
 	& > *
 		letter-spacing: 0
