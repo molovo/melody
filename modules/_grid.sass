@@ -19,15 +19,14 @@
 // 		width: ( $i / $columns ) * 100%
 
 =split-left
-	letter-spacing: $spacing_adjustment
+	height: auto
+	overflow: hidden
 
 	& > :nth-child(2n+1),
 	& > :nth-child(2n)
 		display: inline-block
 		vertical-align: top
-
-		&:not(.grid-child)
-			letter-spacing: 0
+		float: left
 
 	& > :nth-child(2n+1)
 		width: 38.196601125%
@@ -36,15 +35,14 @@
 		width: 61.803398875%
 
 =split-right
-	letter-spacing: $spacing_adjustment
+	height: auto
+	overflow: hidden
 
 	& > :nth-child(2n+1),
 	& > :nth-child(2n)
 		display: inline-block
 		vertical-align: top
-
-		&:not(.grid-child)
-			letter-spacing: 0
+		float: left
 
 	& > :nth-child(2n+1)
 		width: 61.803398875%
@@ -53,15 +51,14 @@
 		width: 38.196601125%
 
 =grid($large_columns, $mid_columns, $small_columns)
-	letter-spacing: $spacing_adjustment
+	height: auto
+	overflow: hidden
 
 	& > *
 		display: inline-block
 		width: percentage(1/$small_columns)
 		vertical-align: top
-
-		&:not(.grid-child)
-			letter-spacing: 0
+		float: left
 
 		@media (min-width: $bp_medium)
 			width: percentage(1/$mid_columns)
