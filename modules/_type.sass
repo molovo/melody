@@ -3,6 +3,7 @@ html
 
 body
   line-height: 1.5em
+  color: $dark
 
   @if $type_scaling == true
     @media (min-width: $bp_medium)
@@ -81,7 +82,7 @@ hr
   height: 0
   margin: 2.95em auto 3em
   border: 0
-    bottom: 1px solid rgba(0,0,0,.1)
+    bottom: 1px solid $shade
 
 blockquote
   display: block
@@ -91,7 +92,7 @@ blockquote
   &:not(.pull)
     margin: 0 0 1.5em -1.75em
     border: 0
-      left: .25em solid rgba(0,0,0,.1)
+      left: .25em solid $shade
     padding: 0
       left: 1.5em
   &.pull
@@ -115,7 +116,7 @@ blockquote
     family: $secondary
 
 pre
-  background: rgba(0,0,0,.1)
+  background: $shade
   margin: 0 -1.5em 1.5em
   padding: 1.5em
   font-size: .75em
