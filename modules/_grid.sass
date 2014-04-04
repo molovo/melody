@@ -18,7 +18,9 @@
 // 	.\3#{$i} of#{$columns}
 // 		width: ( $i / $columns ) * 100%
 
-=split-left
+=split($left-ratio, $right-ratio)
+	$total: $left-ratio + $right-ratio
+
 	height: auto
 	overflow: hidden
 
@@ -29,26 +31,10 @@
 		float: left
 
 	& > :nth-child(2n+1)
-		width: 38.196601125%
+		width: percentage($left-ratio/$total)
 
 	& > :nth-child(2n)
-		width: 61.803398875%
-
-=split-right
-	height: auto
-	overflow: hidden
-
-	& > :nth-child(2n+1),
-	& > :nth-child(2n)
-		display: inline-block
-		vertical-align: top
-		float: left
-
-	& > :nth-child(2n+1)
-		width: 61.803398875%
-
-	& > :nth-child(2n)
-		width: 38.196601125%
+		width: percentage($right-ratio/$total)
 
 =grid($large_columns, $mid_columns, $small_columns)
 	height: auto
