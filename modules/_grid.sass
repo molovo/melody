@@ -1,0 +1,76 @@
+@if $show_baseline == true
+	body
+		background:
+			image: url(../img/grid.png)
+			repeat: repeat
+			size: 1px 1.5em
+
+.container
+	width: 100%
+	max-width: $container_width
+	margin: 0 auto
+	padding: 3em
+
+.grid
+	display: inline-block
+	padding: 1.5em
+
+@for $i from 1 through $columns
+	.\3#{$i} of#{$columns}
+		width: ( $i / $columns ) * 100%
+
+=split-left
+	letter-spacing: -.35em
+
+	& > :nth-child(2n+1)
+		display: inline-block
+		padding: 1.5em
+		letter-spacing: 0
+		width: 38.196601125%
+
+	& > :nth-child(2n)
+		display: inline-block
+		padding: 1.5em
+		letter-spacing: 0
+		width: 61.803398875%
+
+	&.remove-padding > :nth-child(2n),
+	&.remove-padding > :nth-child(2n+1),
+		padding: 0
+
+=split-right
+	letter-spacing: -.35em
+
+	& > :nth-child(2n+1)
+		display: inline-block
+		padding: 1.5em
+		letter-spacing: 0
+		width: 61.803398875%
+
+	& > :nth-child(2n)
+		display: inline-block
+		padding: 1.5em
+		letter-spacing: 0
+		width: 38.196601125%
+
+	&.remove-padding > :nth-child(2n),
+	&.remove-padding > :nth-child(2n+1)
+		padding: 0
+
+=grid($large_columns, $mid_columns, $small_columns)
+	letter-spacing: -.35em
+
+	& > *
+		letter-spacing: 0
+		display: inline-block
+		padding: 1.5em
+		width: percentage(1/$small_columns)
+
+		@media (min-width: $bp_medium)
+			width: percentage(1/$mid_columns)
+
+		@media (min-width: $bp_large)
+			width: percentage(1/$large_columns)
+
+	&.remove-padding > *
+		padding: 0

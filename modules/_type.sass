@@ -1,0 +1,118 @@
+html
+  font: 100%/1.5em $primary
+
+body
+  font-size: .75em
+  line-height: 1.5em
+
+=type-scale($sizes)
+  @each $size in $sizes
+    @media (min-width: $size + em)
+      body
+        font-size: ( $size / 32 ) + em
+
++type-scale(27 32 36 42 48)
+
+h1, h2, h3, h4, h5, h6
+  font:
+    family: $heading
+    weight: 700
+
+h1
+  font-size: 3em
+  line-height: 1em
+  margin-bottom: .5em
+
+h2
+  font-size: 2.25em
+  line-height: 1.35em
+  margin-bottom: .6666666666666667em
+
+h3
+  font-size: 1.5em
+  line-height: 1em
+  margin-bottom: 1em
+
+h4
+  font-size: 1.3125em
+  line-height: 1.142857142857143em
+  margin-bottom: 1.142857142857143em
+
+h5
+  font-size: 1.125em
+  line-height: 1.35em
+  margin-bottom: 1.333333333333333em
+
+h6
+  font-size: 1em
+  line-height: 1.5em
+  margin-bottom: 1.5em
+
+p, ul, ol, dl, blockquote
+  margin-bottom: 1.5em
+
+ul
+  list-style: disc outside
+
+  ul
+    list-style: circle outside
+    margin:
+      bottom: 0
+      left: 1.5em
+
+ol
+  list-style: decimal outside
+
+  ol
+    list-style: lower-roman outside
+    margin:
+      bottom: 0
+      left: 1.5em
+
+em
+  font-style: italic
+
+strong
+  font-weight: 700
+
+small
+  font-size: .75em
+  line-height: .5em
+
+hr
+  height: 0
+  margin: 2.95em auto 3em
+  border: 0
+    bottom: 1px solid rgba(0,0,0,.1)
+
+blockquote
+  display: block
+  font:
+    weight: 300
+    style: italic
+  &:not(.pull)
+    margin: 0 0 1.5em -1.75em
+    border: 0
+      left: .25em solid rgba(0,0,0,.1)
+    padding: 0
+      left: 1.5em
+  &.pull
+    font:
+      size: 1.5em
+    margin: 0 -1.5em 1em
+    line-height: 1em
+    text-align: center
+
+.center
+  text-align: center
+
+.lalign
+  text-align: left
+
+.ralign
+  text-align: right
+
+.alt
+  font:
+    weight: 300
+    family: $secondary
