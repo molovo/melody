@@ -2,16 +2,13 @@ html
   font: 100%/1.5em $primary
 
 body
-  font-size: .75em
   line-height: 1.5em
 
-=type-scale($sizes)
-  @each $size in $sizes
-    @media (min-width: $size + em)
-      body
-        font-size: ( $size / 32 ) + em
+  @media (min-width: $bp_medium)
+    font-size: 1.125em
 
-+type-scale(27 32 36 42 48)
+  @media (min-width: $bp_large)
+    font-size: 1.3125em
 
 h1, h2, h3, h4, h5, h6
   font:
