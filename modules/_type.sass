@@ -4,11 +4,12 @@ html
 body
   line-height: 1.5em
 
-  @media (min-width: $bp_medium)
-    font-size: 1.125em
+  @if $type_scaling == true
+    @media (min-width: $bp_medium)
+      font-size: 1.125em
 
-  @media (min-width: $bp_large)
-    font-size: 1.3125em
+    @media (min-width: $bp_large)
+      font-size: 1.3125em
 
 h1, h2, h3, h4, h5, h6
   font:
