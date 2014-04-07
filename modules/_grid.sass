@@ -36,7 +36,7 @@
 		& > :nth-child(2n)
 			width: percentage($right-ratio/$total)
 
-=grid($large_columns, $mid_columns, $small_columns)
+=grid($large_columns: 4 $bpl: $bp_large, $mid_columns: 2 $bpm: $bp_medium, $small_columns)
 	height: auto
 	overflow: hidden
 
@@ -46,8 +46,8 @@
 		vertical-align: top
 		float: left
 
-		@media (min-width: $bp_medium)
+		@media (min-width: $bpm)
 			width: percentage(1/$mid_columns)
 
-		@media (min-width: $bp_large)
+		@media (min-width: $bpl)
 			width: percentage(1/$large_columns)
