@@ -18,23 +18,24 @@
 // 	.\3#{$i} of#{$columns}
 // 		width: ( $i / $columns ) * 100%
 
-=split($left-ratio, $right-ratio)
+=split($left-ratio, $right-ratio, $breakpoint: $bp_medium)
 	$total: $left-ratio + $right-ratio
 
-	height: auto
-	overflow: hidden
+	@media (min-width: $breakpoint)
+		height: auto
+		overflow: hidden
 
-	& > :nth-child(2n+1),
-	& > :nth-child(2n)
-		display: inline-block
-		vertical-align: top
-		float: left
+		& > :nth-child(2n+1),
+		& > :nth-child(2n)
+			display: inline-block
+			vertical-align: top
+			float: left
 
-	& > :nth-child(2n+1)
-		width: percentage($left-ratio/$total)
+		& > :nth-child(2n+1)
+			width: percentage($left-ratio/$total)
 
-	& > :nth-child(2n)
-		width: percentage($right-ratio/$total)
+		& > :nth-child(2n)
+			width: percentage($right-ratio/$total)
 
 =grid($large_columns, $mid_columns, $small_columns)
 	height: auto
