@@ -132,13 +132,14 @@ blockquote
     family: $secondary
 
 pre
+  font-size: .875em
+  line-height: #{$baseline / .875}
   background: $shade
-  margin: 0 #{$baseline * -1} $baseline
-  padding: $baseline
+  margin: 0 #{($baseline/.875) * -1} #{$baseline/.875}
+  padding: #{$baseline/.875}
 
   code
-    font-size: .875em
-    line-height: #{$baseline / .875}
+
 
 code
   font-family: $mono
