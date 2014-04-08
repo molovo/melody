@@ -17,6 +17,20 @@ h1, h2, h3, h4, h5, h6
     family: $heading
     weight: 700
 
+  .alt
+    font:
+      family: $secondary
+
+h1, h2
+  .alt
+    font:
+      weight: 200
+
+h3, h4
+  .alt
+    font:
+      weight: 400
+
 h1
   font-size: 3em
   line-height: #{(1 / 1.5) * $baseline}
@@ -126,11 +140,6 @@ blockquote
 
 .ralign
   text-align: right
-
-.alt
-  font:
-    weight: 300
-    family: $secondary
 
 pre
   font-size: .875em
