@@ -99,7 +99,14 @@ hr
   border: solid $shade
     width: 0 0 1px
 
-blockquote
+figure
+  max-width: 100%
+
+  img
+    margin: 0 -1.5em 0
+    max-width: calc(100% + 3em)
+
+blockquote, figcaption
   display: block
 
   cite
@@ -108,6 +115,8 @@ blockquote
       family: $secondary
       weight: 600
       style: normal
+
+blockquote
 
   &:not(.pull)
     margin: 0 0 $baseline -$baseline
@@ -153,9 +162,3 @@ code
 
   // Line height should be inherited, but for inline code blocks where it isn't, this maintains the baseline
   line-height: 0
-
-figure
-  max-width: 100%
-
-  img
-    margin: 0 -1.5em 0
