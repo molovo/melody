@@ -51,3 +51,18 @@
 
 		@media (min-width: $bpl)
 			width: percentage(1/$large_columns)
+
+=offcanvas($direction: left, $bp: $bp_medium, $transition_time: .25s, $transition_easing: ease-in-out-quad, $transition_distance: 100%)
+	@if $direction == left
+		$transition_distance = #{$transition_distance * 1}
+	@else if $direction == right
+		$transition_distance = $transition_distance
+
+	@media (max-width: $bp)
+		transform: translate($transition_distance, 0)
+		transition: transform $transition_time $transition_easing
+
+		&.visible
+			transform: translate(0, 0)
+
+		@content
