@@ -116,6 +116,9 @@ blockquote, figcaption
       weight: 600
       style: normal
 
+  p:not(:last-of-type)
+    margin: 0
+
   &:not(.pull)
     margin: 0 0 $baseline -$baseline
     border: solid $shade
@@ -135,9 +138,6 @@ blockquote, figcaption
 
     cite
       font-size: .4444444444444444em
-
-    p
-      margin: 0
 
 .center
   text-align: center
