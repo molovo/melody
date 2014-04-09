@@ -136,9 +136,15 @@ figure
   max-width: 100%
 
   img
-    margin: 0 -1.5em 0
-    max-width: calc(100% + 3em)
     display: block
+    max-width: 100%
+
+  &.full-width
+    width: 100%
+
+    img
+      margin: 0 -1.5em 0
+      width: calc(100% + 3em)
 
   figcaption, figcaption:not(.pull)
     padding: $baseline 0 0 $baseline
