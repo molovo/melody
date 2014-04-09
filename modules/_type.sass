@@ -112,6 +112,7 @@ blockquote, figcaption
   p:last-of-type
     margin: 0
 
+blockquote
   &:not(.pull)
     margin: 0 0 $baseline #{$baseline * -1}
     border: solid $shade
@@ -138,9 +139,6 @@ figure
   img
     display: block
     max-width: 100%
-
-  figcaption, figcaption:not(.pull)
-    margin: 0 0 $baseline
 
   &.full-width
     width: 100%
