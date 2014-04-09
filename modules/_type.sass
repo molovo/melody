@@ -139,6 +139,9 @@ figure
     display: block
     max-width: 100%
 
+  figcaption
+    margin: 0 0 $baseline
+
   &.full-width
     width: 100%
 
@@ -146,8 +149,9 @@ figure
       margin: 0 -1.5em 0
       width: calc(100% + 3em)
 
-  figcaption, figcaption:not(.pull)
-    padding: $baseline 0 0 $baseline
+    figcaption, figcaption:not(.pull)
+      padding: $baseline 0 0 $baseline
+      margin: 0 0 $baseline #{$baseline * -1}
 
 .center
   text-align: center
