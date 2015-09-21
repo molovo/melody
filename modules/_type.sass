@@ -130,9 +130,9 @@ figure
     width: 100%
 
     img
-      margin: 0 -1.5em 0
-      max-width: calc(100% + 3em)
-      width: calc(100% + 3em)     // Need both because of a webkit bug!
+      margin: 0 #{$baseline * -2} 0
+      max-width: calc(100% + #{$baseline * 4})
+      width: calc(100% + #{$baseline * 4})     // Need both because of a webkit bug!
 
 .center
   text-align: center
@@ -144,11 +144,7 @@ figure
   text-align: right
 
 pre
-  font-size: .875em
-  line-height: #{$baseline / .875}
-  background: $shade
-  margin: 0 #{($baseline/.875) * -1} #{$baseline/.875}
-  padding: #{$baseline/.875}
+  margin: 0 0 $baseline
 
 code
   font-family: $mono

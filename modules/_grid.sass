@@ -45,6 +45,116 @@
 		@media (min-width: $bpl)
 			width: percentage(1/$large_columns)
 
+=first-row($small_columns: 1, $mid_columns: 2, $large_columns: 4, $bpm: $bp_medium, $bpl: $bp_large)
+	@media (max-width: $bpm)
+		& > :nth-child(-n+#{$small_columns})
+			@content
+
+	@media (min-width: $bpm) and (max-width: $bpl)
+		& > :nth-child(-n+#{$mid_columns})
+			@content
+
+	@media (min-width: $bpl)
+		& > :nth-child(-n+#{$large_columns})
+			@content
+
+=nth-row($row: 2, $small_columns: 1, $mid_columns: 2, $large_columns: 4, $bpm: $bp_medium, $bpl: $bp_large)
+	@media (max-width: $bpm)
+		& > :nth-child(#{(($row - 1) * $small_columns) + 1}),
+		& > :nth-child(#{(($row - 1) * $small_columns) + 1}) ~ :nth-child(-n+#{($small_columns * $row)})
+			@content
+
+	@media (min-width: $bpm) and (max-width: $bpl)
+		& > :nth-child(#{(($row - 1) * $mid_columns) + 1}),
+		& > :nth-child(#{(($row - 1) * $mid_columns) + 1}) ~ :nth-child(-n+#{($mid_columns * $row)})
+			@content
+
+	@media (min-width: $bpl)
+		& > :nth-child(#{(($row - 1) * $large_columns) + 1}),
+		& > :nth-child(#{(($row - 1) * $large_columns) + 1}) ~ :nth-child(-n+#{($large_columns * $row)})
+			@content
+
+=nth-last-row($row: 2, $small_columns: 1, $mid_columns: 2, $large_columns: 4, $bpm: $bp_medium, $bpl: $bp_large)
+	@media (max-width: $bpm)
+		& > :nth-last-child(-n+#{($small_columns * $row)}):not(:nth-last-child(-n+#{($small_columns * ($row - 1))}))
+			@content
+
+	@media (min-width: $bpm) and (max-width: $bpl)
+		& > :nth-last-child(-n+#{($mid_columns * $row)}):not(:nth-last-child(-n+#{($mid_columns * ($row - 1))}))
+			@content
+
+	@media (min-width: $bpl)
+		& > :nth-last-child(-n+#{($large_columns * $row)}):not(:nth-last-child(-n+#{($large_columns * ($row - 1))}))
+			@content
+
+=last-row($small_columns: 1, $mid_columns: 2, $large_columns: 4, $bpm: $bp_medium, $bpl: $bp_large)
+	@media (max-width: $bpm)
+		& > :nth-child(#{$small_columns}n+1):nth-last-child(-n+#{$small_columns}),
+		& > :nth-child(#{$small_columns}n+1):nth-last-child(-n+#{$small_columns}) ~ *
+			@content
+
+	@media (min-width: $bpm) and (max-width: $bpl)
+		& > :nth-child(#{$mid_columns}n+1):nth-last-child(-n+#{$mid_columns}),
+		& > :nth-child(#{$mid_columns}n+1):nth-last-child(-n+#{$mid_columns}) ~ *
+			@content
+
+	@media (min-width: $bpl)
+		& > :nth-child(#{$large_columns}n+1):nth-last-child(-n+#{$large_columns}),
+		& > :nth-child(#{$large_columns}n+1):nth-last-child(-n+#{$large_columns}) ~ *
+			@content
+
+=first-column($small_columns: 1, $mid_columns: 2, $large_columns: 4, $bpm: $bp_medium, $bpl: $bp_large)
+	@media (max-width: $bpm)
+		& > :nth-child(#{$small_columns}n+1)
+			@content
+
+	@media (min-width: $bpm) and (max-width: $bpl)
+		& > :nth-child(#{$mid_columns}n+1)
+			@content
+
+	@media (min-width: $bpl)
+		& > :nth-child(#{$large_columns}n+1)
+			@content
+
+=nth-column($column: 2, $small_columns: 1, $mid_columns: 2, $large_columns: 4, $bpm: $bp_medium, $bpl: $bp_large)
+	@media (max-width: $bpm)
+		& > :nth-child(#{$small_columns}n+#{$column})
+			@content
+
+	@media (min-width: $bpm) and (max-width: $bpl)
+		& > :nth-child(#{$mid_columns}n+#{$column})
+			@content
+
+	@media (min-width: $bpl)
+		& > :nth-child(#{$large_columns}n+#{$column})
+			@content
+
+=nth-last-column($column: 2, $small_columns: 1, $mid_columns: 2, $large_columns: 4, $bpm: $bp_medium, $bpl: $bp_large)
+	@media (max-width: $bpm)
+		& > :nth-child(#{$small_columns}n-#{$column - 1})
+			@content
+
+	@media (min-width: $bpm) and (max-width: $bpl)
+		& > :nth-child(#{$mid_columns}n-#{$column - 1})
+			@content
+
+	@media (min-width: $bpl)
+		& > :nth-child(#{$large_columns}n-#{$column - 1})
+			@content
+
+=last-column($small_columns: 1, $mid_columns: 2, $large_columns: 4, $bpm: $bp_medium, $bpl: $bp_large)
+	@media (max-width: $bpm)
+		& > :nth-child(#{$small_columns}n)
+			@content
+
+	@media (min-width: $bpm) and (max-width: $bpl)
+		& > :nth-child(#{$mid_columns}n)
+			@content
+
+	@media (min-width: $bpl)
+		& > :nth-child(#{$large_columns}n)
+			@content
+
 =off-canvas($transition_direction: left, $bp: $bp_medium, $transition_time: .25s, $transition_easing: ease-in-out-quad, $transition_distance: 100%)
 	@if $transition_direction == left
 		$transition_distance: $transition_distance * -1
